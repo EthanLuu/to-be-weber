@@ -6,6 +6,4 @@ Be a front-end developer.
 
 欢迎PR。
 
-> Hope it could help u 😄
-
-[https://blog.ethanloo.top](EthanLoo's)
+> Hope it could help u. 😄
