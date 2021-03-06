@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo14</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+      .red {
+        color: crimson;
+      }
+
+      .green {
+        color: greenyellow;
+      }
+
+      .blue {
+        color: aqua;
+      }
+
+      .back {
+        background-color: #eef2ee;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+            list: {
+                one: 'jia',
+                two: 'yi',
+                three: 'bing'
+            },
+
+        };
+      },
+      methods: {
+      },
+      template: `
+        <ul>
+            <template v-for="(value, key, index) in list" :key="key">
+                <li v-if="value!='bing'">{{value}}</li>
+            </template>
+            
+        </ul>
+      `,
+    });
+    const vm = app.mount("#app");
+  </script>
+</html>

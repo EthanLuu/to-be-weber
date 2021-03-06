@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo9-computed</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          message: "ethanloo.top",
+          price: 10,
+          count: 2,
+        };
+      },
+      watch: {
+        count(cur, pre) {
+          console.log("count changed");
+          console.log("before:" + pre);
+          console.log("now:" + cur);
+        },
+        price(cur, prev) {
+          console.log("price changed");
+        },
+      },
+      computed: {
+        total() {
+          return this.price * this.count;
+        },
+      },
+      methods: {
+        handleItemClick() {
+          this.message =
+            this.message == "ethanloo.top" ? "ethanlu" : "ethanloo.top";
+        },
+        addOne() {
+          this.count++;
+        },
+        addOneDollar() {
+          this.price++;
+        },
+      },
+      template: `
+        <h2>{{total}}</h2>
+        <button @click="addOne">buy</button>
+        <button @click="addOneDollar">up</button>
+      `,
+    });
+    const vm = app.mount("#app");
+  </script>
+</html>

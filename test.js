@@ -1,10 +1,21 @@
-$(document).ready(function () {
-  var list = $('.wrap>ul>li');
-  list.mouseenter(function () {
-    $(this).children('ul').show();
+const request1 = function () {
+  const promise = new Promise((resolve) => {
+    request("https://www.ethanloo.top", function (response) {
+      if (response.retCode == 200) {
+        resolve("request1 success, " + response);
+      } else {
+        reject("failure");
+      }
+    });
   });
-  list.mouseleave(function () {
-    $(this).children('ul').hide();  
-  });
+  return promise;
+};
 
+async function queryData() {
+  const response = await request1();
+  return response;
+}
+
+queryData().then((data) => {
+  console.log(data);
 });

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo11</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+      .red {
+        color: crimson;
+      }
+
+      .green {
+        color: greenyellow;
+      }
+
+      .blue {
+        color: aqua;
+      }
+
+      .back {
+        background-color: #eef2ee;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          classArray: ["red", "back"],
+          styleString: "color: orange",
+          styleObject: {
+              color: 'red',
+              background: 'blue',
+          }
+        };
+      },
+      template: `
+        <h2 :class="classArray">EthanLoo</h2>
+        <sonCom :style="styleObject" />
+      `,
+    });
+    app.component("sonCom", {
+      template: `
+            <div :style='$attrs.style'>SomCom</div>
+            <div>mtf</div>
+        `,
+    });
+    const vm = app.mount("#app");
+  </script>
+</html>
