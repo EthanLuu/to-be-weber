@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo16</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+      .red {
+        color: crimson;
+      }
+
+      .green {
+        color: greenyellow;
+      }
+
+      .blue {
+        color: aqua;
+      }
+
+      .back {
+        background-color: #eef2ee;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          count: 0,
+        };
+      },
+      methods: {
+        addOne() {
+          this.count += 1;
+          alert("holy");
+        },
+        handleBtnClick1() {
+          alert("wow");
+        },
+      },
+      template: `
+      <div @click.self="handleBtnClick1">
+          yo
+        <div>后宫规模：{{count}}</div>
+        <button @click.once="addOne()">新增一位</button>
+      </div>
+      `,
+    });
+    const vm = app.mount("#app");
+  </script>
+</html>

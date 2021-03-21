@@ -1,0 +1,50 @@
+user-card {
+    display: flex;
+    width: 450px;
+    height: 180px;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #eeee;
+    border: 1px solid #d5d5d5;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 3px;
+    font-family: "sans-serif";
+}
+
+user-card > .image{
+    flex: 0 0 auto;
+    height: 160px;
+    width: 160px;
+    border-radius: 5px;
+}
+
+user-card > .container {
+    box-sizing: border-box;
+    padding: 20px;
+    height: 160px;
+}
+
+.container > .name {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;   
+    margin: 0;
+    margin-bottom: 10px; 
+}
+
+.container > .email {
+    font-size: 12px;
+    line-height: 1;
+    opacity: 0.75;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.container > .button {
+    padding: 10px 25px;
+    font-size: 12px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo1</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+
+  <script>
+    const app = Vue.createApp({
+        template:`
+            <website />
+            <description />
+            <count />
+            <count />
+            <count />
+        `
+    });
+    app.component('website', {
+        template: `<h1>ethanloo.com</h1>`
+    })
+    app.component('description', {
+        template: `<h2>welcome to EthanLu's blog</h2>`
+    })
+    app.component('count',{
+        data() {
+            return{
+                count: 1
+            }
+            
+        },
+
+        template: `<div>{{count}} <button @click='count++'>add</button></div>`
+    })
+    const vm = app.mount("#app");
+  </script>
+</html>

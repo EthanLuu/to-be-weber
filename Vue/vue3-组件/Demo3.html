@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo3</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          name: 233,
+          pay: () => {
+            alert("paid 1 buck");
+          },
+        };
+      },
+      template: `
+        <Lady :pay="pay"/>
+        `,
+    });
+
+    app.component("Lady", {
+      props: ["pay"],
+      methods: {
+        handleClick() {
+          alert("please pay");
+          this.pay();
+        },
+      },
+      template: `<div @click='this.handleClick'>say hello to the lady</div>`,
+    });
+    const vm = app.mount("#app");
+  </script>
+</html>

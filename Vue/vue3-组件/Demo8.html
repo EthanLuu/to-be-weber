@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo8</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.2/vue.global.js"></script>
+    <style>
+      .demo {
+        font-family: sans-serif;
+        border: 1px solid #eee;
+        border-radius: 2px;
+        padding: 20px 30px;
+        margin-top: 1em;
+        margin-bottom: 40px;
+        user-select: none;
+        overflow-x: auto;
+      }
+      .demo-alert-box {
+        padding: 10px 20px;
+        background: #f3beb8;
+        border: 1px solid #f09898;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="slots-demo" class="demo">
+      <alert-box>
+        Something is WRONG!
+      </alert-box>
+    </div>
+  </body>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+        };
+      },
+      methods: {
+      },
+    });
+
+    app.component("alert-box", {
+      template: `
+      <div class="demo-alert-box">
+        <strong>ERROR!</strong>
+        <slot></slot>
+      </div>
+      `,
+    });
+
+    const vm = app.mount("#slots-demo");
+  </script>
+</html>

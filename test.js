@@ -1,21 +1,13 @@
-const request1 = function () {
-  const promise = new Promise((resolve) => {
-    request("https://www.ethanloo.top", function (response) {
-      if (response.retCode == 200) {
-        resolve("request1 success, " + response);
-      } else {
-        reject("failure");
-      }
-    });
-  });
-  return promise;
-};
-
-async function queryData() {
-  const response = await request1();
-  return response;
+function Parent1() {
+  this.name = 'p1';
+  this.getName = function () {
+    return this.name;
+  }
 }
 
-queryData().then((data) => {
-  console.log(data);
-});
+function Child1() {
+  Parent1.call(this);
+  this.age = 1;
+}
+
+console.log(new Child1().getName());
