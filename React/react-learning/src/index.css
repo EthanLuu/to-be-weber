@@ -1,0 +1,32 @@
+@import '~antd/dist/antd.css';
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  height: 600px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  box-shadow: 2px 2px 3px #eee;
+}
+
+.person-container {
+  padding: 10px 250px;
+}
+
+.person-container > input {
+  margin-bottom: 20px;
+}

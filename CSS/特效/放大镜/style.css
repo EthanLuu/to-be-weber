@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+#image {
+  height: 300px;
+  width: 300px;
+  background-color: black;
+  background-image: url('https://placekitten.com/900/900');
+  background-repeat: no-repeat;
+  background-size: 300px 300px;
+}
+
+#image[zoomed] {
+    background-size: 900px 900px;
+    background-position: calc(var(--x) * 100%) calc(var(--y) * 100%);
+}

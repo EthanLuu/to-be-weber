@@ -1,0 +1,21 @@
+.logo>h1 {
+    color: aliceblue;
+    line-height: 31px;
+}
+
+.logo {
+    float: left;
+    width: 120px;
+    height: 31px;
+    margin: 16px 24px 16px 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user {
+    width: 80px;
+    height: 80px;
+}

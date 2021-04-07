@@ -1,0 +1,15 @@
+.banners {
+    border: 1px solid black;
+    height: 500px;
+    width: 800px;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banners{
+    object-fit: cover;
+}

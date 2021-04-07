@@ -1,0 +1,6 @@
+.list {
+  flex: auto;
+  padding: 5px 0px;
+  margin: 0 10px;
+  border-radius: 3px;
+}
