@@ -1,12 +1,12 @@
-// const MyPromise = require('./MyPromise')
-import MyPromise from "./MyPromise.js";
-const promise = new MyPromise((resolve, reject) => {
-    resolve('success')
-    reject('error')
-})
+let salaries = {
+  John: 100,
+  Pete: 300,
+  Mary: 250,
+}
 
-promise.then(value => {
-    console.log('resolve', value)
-}, reason => {
-    console.log('reject', reason)
-})
+function sumSalaries(salaries) {
+  return Object.values(salaries).reduce((pre, val) => pre + val, 0)
+}
+
+
+console.log(sumSalaries(salaries))
