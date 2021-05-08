@@ -7,6 +7,7 @@ const throttle = (fn, time) => {
         context = this
         args = arguments
         if (now - pre > time) {
+            // 对距离上次的时间进行限制
             fn.apply(context, args)
             pre = now
         }

@@ -1,12 +1,16 @@
-let salaries = {
-  John: 100,
-  Pete: 300,
-  Mary: 250,
-}
+let observer = new MutationObserver((mutationRecords) => {
+  console.log(mutationRecords)
+})
 
-function sumSalaries(salaries) {
-  return Object.values(salaries).reduce((pre, val) => pre + val, 0)
-}
+const elem = document.querySelector('#elem')
 
+observer.observe(elem, {
+  childList: true,
+  subtree: true,
+  characterDataOldValue: true,
+})
 
-console.log(sumSalaries(salaries))
+const btn = document.querySelector('#btn')
+btn.addEventListener('click', () => {
+  elem.textContent = 'wow'
+})

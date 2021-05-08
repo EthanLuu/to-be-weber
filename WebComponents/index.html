@@ -1,78 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Web components</title>
+  </head>
+  <body>
+    <script>
+      class HelloButton extends HTMLButtonElement {
+        constructor() {
+          super()
+          this.addEventListener('click', () => alert('hello'))
+        }
+      }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
-    <link rel="stylesheet" href="style.css">
-</head>
+      customElements.define('hello-button', HelloButton, {
+        extends: 'button',
+      })
+    </script>
 
-<body>
-    <user-card image="https://cdn.ethanloo.top/img/20201202163121.png" name="EthanLoo" email="ethanlooo@outlook.com">
-    </user-card>
-    <template id="userCardTemplate">
-        <style>
-            :host {
-                display: flex;
-                width: 450px;
-                height: 180px;
-                align-items: center;
-                box-sizing: border-box;
-                background-color: #eeee;
-                border: 1px solid #d5d5d5;
-                box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-                padding: 10px;
-                overflow: hidden;
-                border-radius: 3px;
-                font-family: "sans-serif";
-            }
-
-            .image {
-                flex: 0 0 auto;
-                height: 160px;
-                width: 160px;
-                border-radius: 5px;
-            }
-
-            .container {
-                box-sizing: border-box;
-                padding: 20px;
-                height: 160px;
-            }
-
-            .container>.name {
-                font-size: 20px;
-                font-weight: 600;
-                line-height: 1;
-                margin: 0;
-                margin-bottom: 10px;
-            }
-
-            .container>.email {
-                font-size: 12px;
-                line-height: 1;
-                opacity: 0.75;
-                margin: 0;
-                margin-bottom: 30px;
-            }
-
-            .container>.button {
-                padding: 10px 25px;
-                font-size: 12px;
-                border-radius: 5px;
-                text-transform: uppercase;
-            }
-        </style>
-        <img alt="" class="image">
-        <div class="container">
-            <p class="name"></p>
-            <p class="email"></p>
-            <button class="button">Follow Me</button>
-        </div>
-    </template>
-    <script src='./main.js'></script>
-</body>
-
+    <button is="hello-button">Click me</button>
+  </body>
 </html>

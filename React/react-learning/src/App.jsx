@@ -1,16 +1,10 @@
 import React, { Component } from 'react'
-import Counter from './containers/Counter'
-import store from './redux/store'
-import Person from './containers/Person'
-import { Provider } from 'react-redux'
+import Reflv from 'reflv'
 export default class App extends Component {
   render() {
     return (
       <div className="container">
-        <Provider store={store}>
-          <Counter />
-          <Person />
-        </Provider>
+        <Reflv url={`http://localhost/api1/live/test.flv`} type="flv" isLive />
       </div>
     )
   }
