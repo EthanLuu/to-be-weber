@@ -5,5 +5,14 @@
     "eslint-plugin-html": "^6.1.2",
     "express": "^4.17.1",
     "nanoid": "^3.1.22"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es6": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 8
+    }
   }
 }
