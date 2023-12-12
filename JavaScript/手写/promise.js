@@ -76,7 +76,7 @@ class MyPromise {
         // 如果传入的实例的状态是失败，则执行失败回调
         queueMicrotask(() => {
           try {
-            const x = (realo = OnRejected(this.reason))
+            const x = (realo = realOnRejected(this.reason))
             resolvePromise(p, x, resolve, reject)
           } catch (error) {
             reject(error)

@@ -26,3 +26,34 @@ const deepClone = (target, map = new WeakMap()) => {
     return target
   }
 }
+
+
+const fullDeepClone = (obj, map = new WeakMap()) => {
+  // obj 为 null 或者非对象的时候直接返回
+  if (obj === null || typeof obj !== 'object') {
+    return obj
+  }
+
+  // 处理日期
+  if (obj instanceof(Date)) {
+    return new Date(obj)
+  }
+
+  if (obj instanceof(RegExp)) {
+    return new RegExp(obj)
+  }
+
+  // 避免递归引用
+  if (map.has(obj)) {
+    return map.get(obj)
+  }
+  const cloneObj = new obj.constructor()
+  map.set(obj, cloneObj)
+
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      cloneObj[key] = fullDeepClone(obj[key], new WeakMap())
+    }
+  }
+  return obj
+}
