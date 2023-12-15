@@ -13,6 +13,18 @@ const throttle = (fn, interval) => {
   }
 }
 
+function myThrottle(fn, interval) {
+  let inThrottle = false
+  return function (...args) {
+    if (inThrottle) return
+    fn.apply(this, args)
+    inThrottle = true
+    setTimeout(() => {
+      inThrottle = false
+    }, interval)
+  }
+}
+
 const button = document.querySelector('button')
 const callback = () => {
   console.log('button clicked!')
